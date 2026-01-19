@@ -377,7 +377,7 @@ export default function App() {
             <div className="space-y-0.5">
               <h2 className={`text-lg font-black uppercase tracking-tighter ${isDark ? 'text-white' : 'text-slate-900'}`}>January 2026</h2>
               <p className={`text-[10px] font-medium leading-relaxed max-w-2xl ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
-                High-density tracking of interactive entertainment milestones.
+                Game Release Updates
               </p>
             </div>
           </div>
