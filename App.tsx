@@ -133,8 +133,8 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
           </div>
         </div>
 
-        {/* Footer Section */}
-        <div className="pt-3 border-t border-dashed space-y-3 mt-auto border-slate-200 dark:border-slate-800/60">
+        {/* Footer Section - Changed border-dashed to border-solid */}
+        <div className="pt-3 border-t border-solid space-y-3 mt-auto border-slate-200 dark:border-slate-800/60">
           <div className="flex flex-wrap items-center gap-1">
             {game.platforms.slice(0, 4).map((p, idx) => (
               <span key={idx} className={`text-[7px] font-black px-1.5 py-0.5 rounded-sm border uppercase tracking-tighter transition-all whitespace-nowrap ${
@@ -150,7 +150,7 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
             )}
           </div>
 
-          {/* Compact Action Button */}
+          {/* Compact Action Button - Changed border-dashed to border-solid */}
           {game.trailerUrl ? (
             <a 
               href={game.trailerUrl} 
@@ -166,7 +166,7 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
               <span>Watch Trailer</span>
             </a>
           ) : (
-            <div className={`flex items-center justify-center gap-2 text-[8px] font-black py-2 border border-dashed rounded-xl cursor-default tracking-[0.1em] uppercase opacity-40 ${
+            <div className={`flex items-center justify-center gap-2 text-[8px] font-black py-2 border border-solid rounded-xl cursor-default tracking-[0.1em] uppercase opacity-40 ${
               isDark ? 'text-slate-600 border-slate-800/50 bg-slate-950/10' : 'text-slate-400 border-slate-200 bg-slate-50/50'
             }`}>
               <span>N/A</span>
@@ -200,7 +200,7 @@ const CalendarView: React.FC<{ games: Game[]; isDark: boolean; onGameClick: (gam
             : `opacity-60 ${isDark ? 'border-slate-800/20 bg-slate-900/5' : 'border-slate-100 bg-slate-50/20'}`
           }`}>
             <div className="flex justify-between items-start mb-3 relative z-10">
-              <span className={`text-2xl font-black leading-none tracking-tighter ${dayGames.length > 0 ? (isToday ? 'text-blue-500' : (isDark ? 'text-white' : 'text-slate-900')) : (isDark ? 'text-slate-800' : 'text-slate-200')}`}>{day}</span>
+              <span className={`text-2xl font-black leading-none tracking-tighter ${dayGames.length > 0 ? (isToday ? 'text-blue-500' : (isDark ? 'text-white' : 'text-slate-900')) : (isDark ? 'text-slate-800' : 'text-slate-400')}`}>{day}</span>
               {dayGames.length > 0 && <span className={`text-[8px] px-1.5 py-0.5 rounded-full font-black shadow-lg ${isDark ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white'}`}>{dayGames.length}</span>}
             </div>
             
@@ -310,8 +310,9 @@ export default function App() {
                </button>
             </div>
             <div className="hidden lg:block">
+              {/* Changed platform name from Radar to Game Tracker */}
               <h1 className="text-sm font-black tracking-tighter leading-none uppercase italic">
-                Radar
+                Game Tracker
               </h1>
             </div>
           </div>
@@ -422,7 +423,8 @@ export default function App() {
 
           <div className="relative min-h-[400px]">
             {filteredGames.length === 0 ? (
-              <div className={`flex flex-col items-center justify-center py-20 border-2 border-dashed rounded-2xl transition-all ${isDark ? 'bg-slate-950/40 border-slate-800/50 text-slate-700' : 'bg-slate-50 border-slate-200 text-slate-400'}`}>
+              /* Changed border-dashed to border-solid */
+              <div className={`flex flex-col items-center justify-center py-20 border-2 border-solid rounded-2xl transition-all ${isDark ? 'bg-slate-950/40 border-slate-800/50 text-slate-700' : 'bg-slate-50 border-slate-200 text-slate-400'}`}>
                 <Gamepad2 className={`w-12 h-12 opacity-5 mb-4`} />
                 <h3 className={`text-base font-black uppercase tracking-tighter ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>No results</h3>
               </div>
@@ -447,7 +449,7 @@ export default function App() {
             <span className={`text-[8px] font-black uppercase tracking-[0.2em] ${isDark ? 'text-slate-700' : 'text-slate-300'}`}>itslowkeyxp</span>
           </div>
           <span className={`text-[8px] font-black uppercase tracking-[0.3em] ${isDark ? 'text-slate-800' : 'text-slate-300'}`}>
-            © 2026 Protocol
+            © 2026 Game Tracker
           </span>
         </div>
       </footer>
