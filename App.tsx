@@ -5,8 +5,8 @@ import {
   ChevronRight, Globe, Layers, Cpu, Monitor, Smartphone, LayoutGrid, X, Twitter, 
   Sun, Moon, RefreshCw, PlusSquare, ExternalLink, Clock, CheckCircle, Package, Info
 } from 'lucide-react';
-import { GAMES_DATA } from './data';
-import { Game, ViewMode, ReleaseCategory } from './types';
+import { GAMES_DATA } from './data.ts';
+import { Game, ViewMode, ReleaseCategory } from './types.ts';
 
 const APP_TODAY = '2026-01-19';
 
@@ -179,7 +179,7 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
             <div className={`flex items-center justify-center gap-2 text-[10px] font-black py-3.5 border border-dashed rounded-2xl cursor-default tracking-[0.2em] uppercase opacity-40 ${
               isDark ? 'text-slate-600 border-slate-800/50 bg-slate-950/20' : 'text-slate-400 border-slate-200 bg-slate-50/50'
             }`}>
-              <Info className="w-3 h-3" />
+              <span className="text-[8px]"><Info className="w-3 h-3" /></span>
               <span>Preview N/A</span>
             </div>
           )}
