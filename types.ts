@@ -8,7 +8,9 @@ export type ReleaseCategory =
   | 'Edition' 
   | 'DLC' 
   | 'Remake/Remaster'
-  | 'Physical Release';
+  | 'Physical Release'
+  | 'Expansion'
+  | 'Collection';
 
 export interface Game {
   id: string;

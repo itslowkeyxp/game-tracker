@@ -1,12 +1,13 @@
-# 🎮 January & February 2026 Game Tracker
 
-A high-performance, modern dashboard for tracking video game releases, updates, ports, and DLCs for the first two months of 2026. Built with React, Tailwind CSS, and Lucide Icons, featuring a sleek dual-mode (Dark/Light) interface.
+# 🎮 Jan, Feb, Mar, Apr & May 2026 Game Tracker
+
+A high-performance, modern dashboard for tracking video game releases, updates, ports, and DLCs for the first five months of 2026. Built with React, Tailwind CSS, and Lucide Icons, featuring a sleek dual-mode (Dark/Light) interface.
 
 ## 🚀 Key Features
 
--   **Dual Month Coverage**: Full release schedules for both January and February 2026.
+-   **Coverage**: Full release schedules for January, February, March, April, and May 2026.
 -   **Dynamic View Modes**: Switch between a high-density **Grid View** and a structural **Calendar View**.
--   **Intelligent Filtering**: Filter by Release Category (New Game, DLC, Port, etc.) and Platform (PS5, PC, Switch 2, etc.).
+-   **Intelligent Filtering**: Filter by Release Category (New Game, Expansion, Collection, DLC, etc.) and Platform (PS5, PC, Switch 2, etc.).
 -   **Live Search**: Instant database querying across titles, genres, and platforms.
 -   **Interactive Calendar**: Day-by-day scannability with YouTube thumbnails and category icons.
 -   **Theme Engine**: Adaptive Dark and Light modes with a premium aesthetic.

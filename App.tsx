@@ -4,7 +4,7 @@ import {
   Search, Calendar, List, Gamepad2, Play, Filter, Image as ImageIcon, Sparkles, 
   ChevronRight, Globe, Layers, Cpu, Monitor, Smartphone, LayoutGrid, X, Twitter, 
   Sun, Moon, RefreshCw, PlusSquare, ExternalLink, Clock, CheckCircle, Package, Info,
-  Github
+  Github, Library
 } from 'lucide-react';
 import { GAMES_DATA } from './data.ts';
 import { Game, ViewMode, ReleaseCategory } from './types.ts';
@@ -22,6 +22,8 @@ const getCategoryIcon = (category: ReleaseCategory) => {
     case 'DLC': return <PlusSquare className="w-3 h-3" />;
     case 'Remake/Remaster': return <RefreshCw className="w-3 h-3" />;
     case 'Physical Release': return <Package className="w-3 h-3" />;
+    case 'Expansion': return <Layers className="w-3 h-3" />;
+    case 'Collection': return <Library className="w-3 h-3" />;
     default: return <Gamepad2 className="w-3 h-3" />;
   }
 };
@@ -47,6 +49,10 @@ const getCategoryStyles = (category: ReleaseCategory, isDark: boolean) => {
       return `${base} ${isDark ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' : 'bg-cyan-50 text-cyan-700 border-cyan-200'}`;
     case 'Physical Release': 
       return `${base} ${isDark ? 'bg-orange-500/10 text-orange-400 border-orange-500/20' : 'bg-orange-50 text-orange-700 border-orange-200'}`;
+    case 'Expansion': 
+      return `${base} ${isDark ? 'bg-amber-600/10 text-amber-500 border-amber-600/20' : 'bg-amber-50 text-amber-700 border-amber-200'}`;
+    case 'Collection': 
+      return `${base} ${isDark ? 'bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20' : 'bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200'}`;
     default: 
       return `${base} ${isDark ? 'bg-slate-500/10 text-slate-400 border-slate-500/20' : 'bg-slate-50 text-slate-700 border-slate-200'}`;
   }
@@ -238,11 +244,11 @@ export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('list');
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activePlatform, setActivePlatform] = useState<string>('All');
-  const [activeMonth, setActiveMonth] = useState<number>(0); // 0 for Jan, 1 for Feb
+  const [activeMonth, setActiveMonth] = useState<number>(0); // 0 for Jan, 1 for Feb, 2 for Mar, 3 for Apr, 4 for May
 
-  const categories = ['All', 'New Game', 'Early Access', 'DLC', 'Port', 'Update', 'Remake/Remaster', 'Edition', 'Full Release', 'Physical Release'];
+  const categories = ['All', 'New Game', 'Early Access', 'DLC', 'Expansion', 'Port', 'Update', 'Remake/Remaster', 'Edition', 'Collection', 'Full Release', 'Physical Release'];
   const majorPlatforms = ['All', 'Steam', 'PS5', 'Xbox', 'Switch', 'Switch 2', 'Mobile'];
-  const months = ['January', 'February'];
+  const months = ['January', 'February', 'March', 'April', 'May'];
 
   const isDark = theme === 'dark';
 
