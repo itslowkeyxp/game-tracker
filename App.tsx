@@ -10,13 +10,6 @@ import { Game, ViewMode, ReleaseCategory } from './types.ts';
 
 const APP_TODAY = '2026-01-19';
 
-const getYoutubeId = (url?: string) => {
-  if (!url) return null;
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-  const match = url.match(regExp);
-  return (match && match[2].length === 11) ? match[2] : null;
-};
-
 const getCategoryIcon = (category: ReleaseCategory) => {
   switch (category) {
     case 'New Game': return <Sparkles className="w-3 h-3" />;
@@ -78,7 +71,7 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
       ? 'bg-slate-900/40 border-slate-800/60 hover:border-blue-500/40 hover:shadow-[0_0_40px_-15px_rgba(59,130,246,0.15)]' 
       : 'bg-white border-slate-200 hover:border-blue-300 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.05)]'
     }`}>
-      {/* Media Container - Tight Aspect Ratio */}
+      {/* Media Container */}
       <div className={`aspect-video w-full relative overflow-hidden shrink-0 ${isDark ? 'bg-slate-800' : 'bg-slate-100'}`}>
         {thumb ? (
           <img 
@@ -99,7 +92,7 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
         </div>
       </div>
       
-      {/* Content Container - Even more compact padding */}
+      {/* Content Container */}
       <div className="flex flex-col flex-1 p-4 gap-3">
         <header className="space-y-0.5">
           <span className={`text-[8px] font-black uppercase tracking-[0.2em] block ${isDark ? 'text-blue-400/80' : 'text-blue-600'}`}>
@@ -114,10 +107,9 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
         <div className="flex flex-col gap-2.5 flex-1">
           <div className="space-y-2">
             <p className={`text-[10px] leading-relaxed line-clamp-3 min-h-[2.5rem] font-medium transition-colors ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
-              {game.summary || `A ${game.category.toLowerCase()} experience for January 2026.`}
+              {game.summary || `A ${game.category.toLowerCase()} experience for 2026.`}
             </p>
 
-            {/* Scannable Genre Pills - Top 3 */}
             <div className="flex flex-wrap gap-1">
               {game.genres.slice(0, 3).map((g, i) => (
                 <div key={i} className={`flex items-center gap-1 px-1.5 py-0.5 rounded-md border transition-all ${
@@ -133,8 +125,8 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
           </div>
         </div>
 
-        {/* Footer Section - Changed border-dashed to border-solid */}
-        <div className="pt-3 border-t border-solid space-y-3 mt-auto border-slate-200 dark:border-slate-800/60">
+        {/* Footer Section */}
+        <div className={`pt-3 border-t border-solid space-y-3 mt-auto ${isDark ? 'border-slate-800/60' : 'border-slate-200'}`}>
           <div className="flex flex-wrap items-center gap-1">
             {game.platforms.slice(0, 4).map((p, idx) => (
               <span key={idx} className={`text-[7px] font-black px-1.5 py-0.5 rounded-sm border uppercase tracking-tighter transition-all whitespace-nowrap ${
@@ -150,7 +142,6 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
             )}
           </div>
 
-          {/* Compact Action Button - Changed border-dashed to border-solid */}
           {game.trailerUrl ? (
             <a 
               href={game.trailerUrl} 
@@ -178,12 +169,13 @@ const GameCard: React.FC<{ game: Game; isDark: boolean }> = ({ game, isDark }) =
   );
 };
 
-const CalendarView: React.FC<{ games: Game[]; isDark: boolean; onGameClick: (game: Game) => void }> = ({ games, isDark, onGameClick }) => {
-  const daysInJan = 31;
-  const days = Array.from({ length: daysInJan }, (_, i) => i + 1);
+const CalendarView: React.FC<{ games: Game[]; month: number; isDark: boolean; onGameClick: (game: Game) => void }> = ({ games, month, isDark, onGameClick }) => {
+  const daysInMonth = new Date(2026, month + 1, 0).getDate();
+  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+  const monthString = (month + 1).toString().padStart(2, '0');
   
   const getGamesForDay = (day: number) => {
-    const dateStr = `2026-01-${day.toString().padStart(2, '0')}`;
+    const dateStr = `2026-${monthString}-${day.toString().padStart(2, '0')}`;
     return games.filter(g => g.releaseDate === dateStr);
   };
 
@@ -191,7 +183,7 @@ const CalendarView: React.FC<{ games: Game[]; isDark: boolean; onGameClick: (gam
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7 gap-3">
       {days.map(day => {
         const dayGames = getGamesForDay(day);
-        const isToday = day === 19;
+        const isToday = month === 0 && day === 19;
 
         return (
           <div key={day} className={`min-h-[160px] border transition-all relative overflow-hidden group/card rounded-2xl p-4 flex flex-col ${
@@ -206,9 +198,7 @@ const CalendarView: React.FC<{ games: Game[]; isDark: boolean; onGameClick: (gam
             
             <div className="flex flex-col gap-1.5 overflow-y-auto max-h-[100px] pr-1 custom-scrollbar relative z-10">
               {dayGames.map(g => {
-                const categoryStyle = getCategoryStyles(g.category, isDark);
                 const thumb = getYoutubeThumbnail(g.trailerUrl);
-                
                 return (
                   <button 
                     key={g.id} 
@@ -217,9 +207,10 @@ const CalendarView: React.FC<{ games: Game[]; isDark: boolean; onGameClick: (gam
                       isDark ? 'bg-slate-950/80 border-slate-800/60 hover:border-blue-500/50 hover:bg-slate-900' : 'bg-slate-50 border-slate-200 hover:border-blue-300 hover:bg-white shadow-sm'
                     }`}
                   >
+                    {/* Tiny Icon/Thumbnail */}
                     <div className={`shrink-0 w-5 h-5 flex items-center justify-center rounded border overflow-hidden transition-all ${isDark ? 'bg-slate-900 border-slate-800 text-slate-500' : 'bg-white border-slate-200 text-slate-400'}`}>
                       {thumb ? (
-                        <img src={thumb} alt="" className="w-full h-full object-cover" />
+                        <img src={thumb} alt="" className="w-full h-full object-cover grayscale group-hover/item:grayscale-0 transition-all" />
                       ) : (
                         getCategoryIcon(g.category)
                       )}
@@ -246,9 +237,11 @@ export default function App() {
   const [viewMode, setViewMode] = useState<ViewMode>('list');
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [activePlatform, setActivePlatform] = useState<string>('All');
+  const [activeMonth, setActiveMonth] = useState<number>(0); // 0 for Jan, 1 for Feb
 
-  const categories = ['All', 'New Game', 'Early Access', 'DLC', 'Port', 'Update', 'Remake/Remaster', 'Edition', 'Full Release'];
-  const majorPlatforms = ['All', 'Steam', 'PS5', 'Xbox', 'Switch', 'Mobile'];
+  const categories = ['All', 'New Game', 'Early Access', 'DLC', 'Port', 'Update', 'Remake/Remaster', 'Edition', 'Full Release', 'Physical Release'];
+  const majorPlatforms = ['All', 'Steam', 'PS5', 'Xbox', 'Switch', 'Switch 2', 'Mobile'];
+  const months = ['January', 'February'];
 
   const isDark = theme === 'dark';
 
@@ -276,19 +269,22 @@ export default function App() {
 
   const filteredGames = useMemo(() => {
     return GAMES_DATA.filter(game => {
+      const monthIndex = parseInt(game.releaseDate.split('-')[1], 10) - 1;
+      if (monthIndex !== activeMonth) return false;
+
       const matchesSearch = 
         game.title.toLowerCase().includes(search.toLowerCase()) ||
         game.genres.some(g => g.toLowerCase().includes(search.toLowerCase())) ||
         game.platforms.some(p => p.toLowerCase().includes(search.toLowerCase()));
       
-      const matchesCategory = activeCategory === 'All' || game.category.includes(activeCategory);
+      const matchesCategory = activeCategory === 'All' || game.category === activeCategory;
       const matchesPlatform = activePlatform === 'All' || 
         game.platforms.some(p => p.toLowerCase().includes(activePlatform.toLowerCase())) ||
         (activePlatform === 'Mobile' && (game.platforms.some(p => p.includes('Android') || p.includes('IOS'))));
       
       return matchesSearch && matchesCategory && matchesPlatform;
     });
-  }, [search, activeCategory, activePlatform]);
+  }, [search, activeCategory, activePlatform, activeMonth]);
 
   return (
     <div className={`min-h-screen pb-16 selection:bg-blue-500/30 font-inter transition-colors duration-300 ${isDark ? 'text-slate-100' : 'text-slate-900'}`}>
@@ -310,7 +306,6 @@ export default function App() {
                </button>
             </div>
             <div className="hidden lg:block">
-              {/* Changed platform name from Radar to Game Tracker */}
               <h1 className="text-sm font-black tracking-tighter leading-none uppercase italic">
                 Game Tracker
               </h1>
@@ -336,7 +331,7 @@ export default function App() {
             <button 
               onClick={toggleTheme}
               className={`p-1.5 rounded-lg border transition-all hover:scale-105 active:scale-95 shadow-sm ${
-                isDark ? 'bg-slate-900 border-slate-800 text-amber-400 hover:text-amber-300' : 'bg-white border-slate-200 text-slate-500 hover:text-slate-900 shadow-sm'
+                isDark ? 'bg-slate-900 border-slate-800 text-amber-400 hover:text-amber-300' : 'bg-white border-slate-200 text-slate-500 hover:text-slate-900'
               }`}
             >
               {isDark ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
@@ -376,25 +371,37 @@ export default function App() {
               <Sparkles className="w-5 h-5" />
             </div>
             <div className="space-y-0.5">
-              <h2 className={`text-lg font-black uppercase tracking-tighter ${isDark ? 'text-white' : 'text-slate-900'}`}>January 2026</h2>
+              <h2 className={`text-lg font-black uppercase tracking-tighter ${isDark ? 'text-white' : 'text-slate-900'}`}>{months[activeMonth]} 2026</h2>
               <p className={`text-[10px] font-medium leading-relaxed max-w-2xl ${isDark ? 'text-slate-500' : 'text-slate-600'}`}>
-                Game Release Updates
+                Release Tracking & Update Archive
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+             <div className={`border rounded-2xl p-4 flex flex-col shadow-sm transition-all ${isDark ? 'bg-slate-900/40 border-slate-800/60' : 'bg-white border-slate-200'}`}>
+              <span className={`text-[8px] font-black uppercase tracking-widest mb-3 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Timeline</span>
+              <div className="flex flex-wrap gap-1">
+                {months.map((m, idx) => (
+                  <button
+                    key={m}
+                    onClick={() => setActiveMonth(idx)}
+                    className={`px-3 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight ${activeMonth === idx ? (isDark ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-900 border-slate-900 text-white') : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')}`}
+                  >
+                    {m}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className={`border rounded-2xl p-4 flex flex-col shadow-sm transition-all ${isDark ? 'bg-slate-900/40 border-slate-800/60' : 'bg-white border-slate-200'}`}>
+              <span className={`text-[8px] font-black uppercase tracking-widest mb-3 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Type</span>
               <div className="flex flex-wrap gap-1">
                 {categories.map(cat => (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight ${
-                      activeCategory === cat 
-                      ? (isDark ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-900 border-slate-900 text-white') 
-                      : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')
-                    }`}
+                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight ${activeCategory === cat ? (isDark ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-900 border-slate-900 text-white') : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')}`}
                   >
                     {cat}
                   </button>
@@ -403,16 +410,13 @@ export default function App() {
             </div>
 
             <div className={`border rounded-2xl p-4 flex flex-col shadow-sm transition-all ${isDark ? 'bg-slate-900/40 border-slate-800/60' : 'bg-white border-slate-200'}`}>
+              <span className={`text-[8px] font-black uppercase tracking-widest mb-3 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Platform</span>
               <div className="flex flex-wrap gap-1">
                 {majorPlatforms.map(plat => (
                   <button
                     key={plat}
                     onClick={() => setActivePlatform(plat)}
-                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase flex items-center gap-1 tracking-tight ${
-                      activePlatform === plat 
-                      ? (isDark ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-indigo-600 border-indigo-500 text-white')
-                      : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')
-                    }`}
+                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight ${activePlatform === plat ? (isDark ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-indigo-600 border-indigo-500 text-white') : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')}`}
                   >
                     {plat}
                   </button>
@@ -423,7 +427,6 @@ export default function App() {
 
           <div className="relative min-h-[400px]">
             {filteredGames.length === 0 ? (
-              /* Changed border-dashed to border-solid */
               <div className={`flex flex-col items-center justify-center py-20 border-2 border-solid rounded-2xl transition-all ${isDark ? 'bg-slate-950/40 border-slate-800/50 text-slate-700' : 'bg-slate-50 border-slate-200 text-slate-400'}`}>
                 <Gamepad2 className={`w-12 h-12 opacity-5 mb-4`} />
                 <h3 className={`text-base font-black uppercase tracking-tighter ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>No results</h3>
@@ -436,7 +439,7 @@ export default function App() {
                   ))}
                 </div>
               ) : (
-                <CalendarView games={filteredGames} isDark={isDark} onGameClick={handleGameFocus} />
+                <CalendarView games={filteredGames} month={activeMonth} isDark={isDark} onGameClick={handleGameFocus} />
               )
             )}
           </div>
@@ -445,9 +448,7 @@ export default function App() {
 
       <footer className={`mt-20 border-t transition-all py-8 ${isDark ? 'border-slate-900 bg-slate-950/40' : 'border-slate-200 bg-white'}`}>
         <div className="max-w-[1700px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className={`text-[8px] font-black uppercase tracking-[0.2em] ${isDark ? 'text-slate-700' : 'text-slate-300'}`}>itslowkeyxp</span>
-          </div>
+          <span className={`text-[8px] font-black uppercase tracking-[0.2em] ${isDark ? 'text-slate-700' : 'text-slate-300'}`}>itslowkeyxp</span>
           <span className={`text-[8px] font-black uppercase tracking-[0.3em] ${isDark ? 'text-slate-800' : 'text-slate-300'}`}>
             © 2026 Game Tracker
           </span>

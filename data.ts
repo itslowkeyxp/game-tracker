@@ -687,5 +687,766 @@ export const GAMES_DATA: Game[] = [
     genres: ['Action-Adventure', 'RPG'],
     platforms: ['PS5', 'Xbox', 'PC'],
     trailerUrl: 'https://youtu.be/6iVr68aLxew?si=EEp3wwvzACOa5hBE'
+  },
+
+  // FEBRUARY 2026
+  {
+    id: 'starsand-island',
+    releaseDate: '2026-02-01',
+    displayDate: 'Feb 1st 2026',
+    title: 'Starsand Island',
+    category: 'New Game',
+    genres: ['Cozy', 'Life-Sim'],
+    platforms: ['PS5', 'Xbox Series X/S', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/q-Bkz4CS-nY?si=jdmDlokBQg7TvGpp',
+    summary: 'An idyllic life-simulation game set on a beautiful island.'
+  },
+  {
+    id: 'fadeland-fight-clubs',
+    releaseDate: '2026-02-02',
+    displayDate: 'Feb 2nd 2026',
+    title: 'Fadeland: Fight Clubs',
+    category: 'New Game',
+    genres: ['Open-World', 'Action', 'MMO'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/ooXYStuXQXY?si=h8zUlR1zxEUcXMv3'
+  },
+  {
+    id: 'tearscape',
+    releaseDate: '2026-02-02',
+    displayDate: 'Feb 2nd 2026',
+    title: 'Tearscape',
+    category: 'New Game',
+    genres: ['Action-Adventure', 'RPG'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/SIemfZuaj6o?si=BA1RP5265WnsbAb4'
+  },
+  {
+    id: 'aces-of-thunder',
+    releaseDate: '2026-02-03',
+    displayDate: 'Feb 3rd 2026',
+    title: 'Aces Of Thunder',
+    category: 'New Game',
+    genres: ['VR', 'Flight Combat', 'Simulator'],
+    platforms: ['PS5', 'PS VR2', 'PC (Steam)'],
+    trailerUrl: 'https://youtu.be/Xh1Iq43GzlM?si=1vEZXAu2-vVYmyqW'
+  },
+  {
+    id: 'norse-oath-of-blood',
+    releaseDate: '2026-02-03',
+    displayDate: 'Feb 3rd 2026',
+    title: 'Norse: Oath Of Blood',
+    category: 'New Game',
+    genres: ['Turn-Based', 'Tactics', 'RPG', 'Manager'],
+    platforms: ['PS5', 'Xbox Series X/S', 'PC'],
+    trailerUrl: 'https://youtu.be/Y7QMlYUqwwo?si=wqUv61Bii4zhrc8B'
+  },
+  {
+    id: 'yapyap',
+    releaseDate: '2026-02-03',
+    displayDate: 'Feb 3rd 2026',
+    title: 'YAPYAP',
+    category: 'New Game',
+    genres: ['Co-Op', 'Horror', 'Comedy', 'Magic'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/wzXSuakyC3Q?si=RCAE9F0QVOn7ung3'
+  },
+  {
+    id: 'blind-touch',
+    releaseDate: '2026-02-04',
+    displayDate: 'Feb 4th 2026',
+    title: 'Blind Touch',
+    category: 'New Game',
+    genres: ['Simulator'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/9PqmT8uoD84?si=DeW_vl9dP4UO83bY'
+  },
+  {
+    id: '4pgp',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: '4PGP Four-Player Grand Prix',
+    category: 'New Game',
+    genres: ['Arcade', 'Racer'],
+    platforms: ['Switch 2', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/IG1PB-Q_Kjc?si=aXuu886NBYKeBw84'
+  },
+  {
+    id: 'dq-vii',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: 'Dragon Quest VII Reimagined',
+    category: 'Remake/Remaster',
+    genres: ['Turn-Based', 'JRPG'],
+    platforms: ['PS5', 'Xbox', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/3c8xcYHboPs?si=luH2xpNaKEwCecQq'
+  },
+  {
+    id: 'jimmy-pulsating',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: 'Jimmy and the Pulsating Mass',
+    category: 'Port',
+    genres: ['JRPG'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch'],
+    trailerUrl: 'https://youtu.be/eAGLibUfN3I?si=_Mmb9EEAzQy3W8v5'
+  },
+  {
+    id: 'holotype-zombie',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: 'HoloType: Treasure Zombie Island',
+    category: 'New Game',
+    genres: ['Action', 'Typing'],
+    platforms: ['PC (Steam)']
+  },
+  {
+    id: 'lovish',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: 'Lovish',
+    category: 'New Game',
+    genres: ['8-Bit', 'Action-Adventure'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/vrpL2o-xgPA?si=ePK6wBPVngzMpadS'
+  },
+  {
+    id: 'menace',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: 'MENACE',
+    category: 'Early Access',
+    genres: ['Sci-Fi', 'Tactics', 'RPG'],
+    platforms: ['PC (Epic, GOG, Steam)'],
+    trailerUrl: 'https://youtu.be/BkDw0W-vdNI?si=Ky0edlJRUSk3qJiM'
+  },
+  {
+    id: 'pubg-blindspot',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: 'PUBG: BLINDSPOT',
+    category: 'Early Access',
+    genres: ['Shooter', 'Tactical'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/VqfsYaW_Qc8?si=csGVExR9f-WpY6Tw'
+  },
+  {
+    id: 'butchers-village',
+    releaseDate: '2026-02-05',
+    displayDate: 'Feb 5th 2026',
+    title: 'The Butcher\'s Village',
+    category: 'New Game',
+    genres: ['First-Person', 'Psychological Horror'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/5e9KU9-NkJI?si=IKBAymKzD0rCO7qo'
+  },
+  {
+    id: 'bandit-trap',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'Bandit Trap',
+    category: 'New Game',
+    genres: ['Physics', 'Brawler'],
+    platforms: ['PS5', 'Xbox Series X/S', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/XnH78jXGays?si=NymecEbykqQp0aNY'
+  },
+  {
+    id: 'carmageddon-rogue',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'Carmageddon: Rogue Shift',
+    category: 'New Game',
+    genres: ['Roguelite', 'Vehicular Combat', 'Racer'],
+    platforms: ['PS5', 'Xbox Series X/S', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/zq0eqsjMyK8?si=W1QWKFgDwQ--DUma'
+  },
+  {
+    id: 'dead-pets',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'Dead Pets: A Punk Rock Slice of Life Sim',
+    category: 'New Game',
+    genres: ['Management', 'Slice-Of-Life'],
+    platforms: ['PC (Epic, GOG, Steam)'],
+    trailerUrl: 'https://youtu.be/GrebA4ZTd1M?si=7toMsnuwdXHfZ1MU'
+  },
+  {
+    id: 'humanitz',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'HumanitZ',
+    category: 'Full Release',
+    genres: ['Survival', 'RPG'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/QmxM7pXsjSc?si=XqvMwbQTZT2yhnv2'
+  },
+  {
+    id: 'jdm-port',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'JDM: Japanese Drift Master',
+    category: 'Port',
+    genres: ['Simulation', 'Racer'],
+    platforms: ['PS5'],
+    trailerUrl: 'https://youtu.be/HbZBUQlPB8I?si=IsGF8rsiEWDTjLbP'
+  },
+  {
+    id: 'mha-justice',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'My Hero Academia: All\'s Justice',
+    category: 'New Game',
+    genres: ['Arena Fighter'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/Dcd6g9S8ii0?si=ruCPnj7n6QNLv4fJ'
+  },
+  {
+    id: 'nioh-3',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'Nioh 3',
+    category: 'New Game',
+    genres: ['Samurai', 'ARPG'],
+    platforms: ['PS5', 'PC'],
+    trailerUrl: 'https://youtu.be/KXGm-JaxY54?si=lmYjJ5oHCEoVs7WM'
+  },
+  {
+    id: 'pga-2k25-port',
+    releaseDate: '2026-02-06',
+    displayDate: 'Feb 6th 2026',
+    title: 'PGA Tour 2K25',
+    category: 'Port',
+    genres: ['Simulation', 'Golf'],
+    platforms: ['Switch 2'],
+    trailerUrl: 'https://youtu.be/-wuYft5WRmo?si=l2lmh2NeQqbOUXK3'
+  },
+  {
+    id: 'mewgenics',
+    releaseDate: '2026-02-10',
+    displayDate: 'Feb 10th 2026',
+    title: 'Mewgenics!',
+    category: 'New Game',
+    genres: ['Tactical', 'Roguelike', 'Life-Sim'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/YyWcrDKg9hA?si=Na_EY0lTklHAweSy'
+  },
+  {
+    id: 'relooted',
+    releaseDate: '2026-02-10',
+    displayDate: 'Feb 10th 2025',
+    title: 'Relooted',
+    category: 'New Game',
+    genres: ['Heist', 'Adventure'],
+    platforms: ['Xbox Series X/S', 'PC'],
+    trailerUrl: 'https://youtu.be/OmPIK9z9lDI?si=K-NVYqA-FcawqBvK'
+  },
+  {
+    id: 'romeo-deadman',
+    releaseDate: '2026-02-10',
+    displayDate: 'Feb 10th 2026',
+    title: 'Romeo Is A Deadman',
+    category: 'New Game',
+    genres: ['Neo-Noir', 'Action-Adventure'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/FHng8C-N9bw?si=14YRfHVaxJ_xWpJo'
+  },
+  {
+    id: 'lost-found-co',
+    releaseDate: '2026-02-11',
+    displayDate: 'Feb 11th 2026',
+    title: 'Lost And Found Co.',
+    category: 'New Game',
+    genres: ['Cozy', 'Hidden Object'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/l_Ayr9jH6ys?si=Hu5ylfl7dkcGbcID'
+  },
+  {
+    id: 'blazblue-port',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'BlazBlue: Entropy Effect X',
+    category: 'Port',
+    genres: ['Action-Roguelite'],
+    platforms: ['PS5', 'Xbox', 'Switch'],
+    trailerUrl: 'https://youtu.be/APJwbq_tUrg?si=-iiiafC1PAAcC6HA'
+  },
+  {
+    id: 'cash-cleaner-port',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Cash Cleaner Simulator',
+    category: 'Port',
+    genres: ['Simulation'],
+    platforms: ['PS5', 'Xbox Series X/S'],
+    trailerUrl: 'https://youtu.be/BCrn5YgYRmk?si=mC3JquUU2soFmTbv'
+  },
+  {
+    id: 'cromagun-2',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'CromaGun 2: Dye Hard',
+    category: 'New Game',
+    genres: ['Puzzle'],
+    platforms: ['PS5', 'Xbox', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/uzvSdydE6G8?si=GtcxGEEcyQdzdtQ5'
+  },
+  {
+    id: 'disciples-dom',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Disciples: Domination',
+    category: 'New Game',
+    genres: ['Dark Fantasy', 'Strategy', 'RPG'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/vx_H9rXkyE8?si=YqftN3tOk7tpwFy1'
+  },
+  {
+    id: 'house-of-nowhere',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'House Of Nowhere',
+    category: 'New Game',
+    genres: ['Puzzle', 'Adventure'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/uahRGp-hU7U?si=gF4uA90WyDSrJHJ4'
+  },
+  {
+    id: 'lil-gator-dlc',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Lil Gator Game - In the Dark',
+    category: 'DLC',
+    genres: ['Adventure', 'Platformer'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/VS2sVbBG-pA?si=zUM1A_9i0z1Kcsid'
+  },
+  {
+    id: 'mario-tennis-fever',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Mario Tennis Fever',
+    category: 'New Game',
+    genres: ['Arcade', 'Tennis'],
+    platforms: ['Switch 2'],
+    trailerUrl: 'https://youtu.be/myC8ZlDiulo?si=NF0frwX8Aby9oiyY'
+  },
+  {
+    id: 'ride-6',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Ride 6',
+    category: 'New Game',
+    genres: ['Racing', 'Simulator'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/9UL5Xm1__os?si=_IF_6Gg5YXyxIISv'
+  },
+  {
+    id: 'selini',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Selini',
+    category: 'Early Access',
+    genres: ['Metroidvania', 'Exploration'],
+    platforms: ['PC'],
+    trailerUrl: 'https://youtu.be/t5oudx3mv-g?si=ioRvPHM56cHd9mee'
+  },
+  {
+    id: 'tomb-raider-mobile',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Tomb Raider',
+    category: 'Port',
+    genres: ['Action-Adventure'],
+    platforms: ['Android', 'IOS'],
+    trailerUrl: 'https://youtu.be/5ZLieoknwww?si=AfMQBEjEmCBYW9rK'
+  },
+  {
+    id: 'yakuza-kiwami-3',
+    releaseDate: '2026-02-12',
+    displayDate: 'Feb 12th 2026',
+    title: 'Yakuza Kiwami 3 & Dark Ties',
+    category: 'Remake/Remaster',
+    genres: ['Action-Adventure', 'Beat\' Em Up'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/za9rjoTdG_M?si=HBTgUbkUnxUr4ANj'
+  },
+  {
+    id: 'high-on-life-2',
+    releaseDate: '2026-02-13',
+    displayDate: 'Feb 13th 2026',
+    title: 'High On Life 2',
+    category: 'New Game',
+    genres: ['Comedy', 'FPS'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/pNqBsS-AUsg?si=bzlRZcEDSi5vfU74'
+  },
+  {
+    id: 'horripilant',
+    releaseDate: '2026-02-13',
+    displayDate: 'Feb 13th 2026',
+    title: 'Horripilant',
+    category: 'New Game',
+    genres: ['Incremental', 'Horror'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/kqoluTXeFvU?si=7YKLJzJt_toe_GlG'
+  },
+  {
+    id: 'reanimal',
+    releaseDate: '2026-02-13',
+    displayDate: 'Feb 13th 2026',
+    title: 'Reanimal',
+    category: 'New Game',
+    genres: ['Horror', 'Adventure'],
+    platforms: ['PS5', 'Xbox', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/0S5b8AjD4gw?si=yva83ca4C0OThGc3'
+  },
+  {
+    id: 'rune-factory-port',
+    releaseDate: '2026-02-13',
+    displayDate: 'Feb 13th 2026',
+    title: 'Rune Factory: Guardians Of Azuma',
+    category: 'Port',
+    genres: ['ARPG', 'Simulator'],
+    platforms: ['PS5', 'Xbox'],
+    trailerUrl: 'https://youtu.be/oVjcryq8OvQ?si=Gbg7cxofD3Xma4oQ'
+  },
+  {
+    id: 'astrobotanica',
+    releaseDate: '2026-02-16',
+    displayDate: 'Feb 16th 2026',
+    title: 'AstroBotanica',
+    category: 'Early Access',
+    genres: ['Adventure', 'Survival'],
+    platforms: ['PC'],
+    trailerUrl: 'https://youtu.be/dgYNDOx_wwU?si=71anVDwMsDKyB6z7'
+  },
+  {
+    id: 'aerial-knight',
+    releaseDate: '2026-02-17',
+    displayDate: 'Feb 17th 2026',
+    title: 'Aerial_Knight’s Dropshot',
+    category: 'New Game',
+    genres: ['Fast-Paced', 'FPS'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/akOVT_R3QXY?si=qPzaLr9KsmwbBmbA'
+  },
+  {
+    id: 'avowed-port',
+    releaseDate: '2026-02-17',
+    displayDate: 'Feb 17th 2026',
+    title: 'Avowed',
+    category: 'Port',
+    genres: ['Fantasy', 'ARPG'],
+    platforms: ['PS5'],
+    trailerUrl: 'https://youtu.be/8yhr_UqvElk?si=0oySDALjw7kNe_5C'
+  },
+  {
+    id: 'calamity-angels',
+    releaseDate: '2026-02-17',
+    displayDate: 'Feb 17th 2026',
+    title: 'Calamity Angels: Special Delivery',
+    category: 'New Game',
+    genres: ['RPG'],
+    platforms: ['PS5', 'PS4', 'Switch'],
+    trailerUrl: 'https://youtu.be/UN0PFwbKQKU?si=K_bqr9ivscwrm2NB'
+  },
+  {
+    id: 'nen-survivor',
+    releaseDate: '2026-02-18',
+    displayDate: 'Feb 18th 2026',
+    title: 'Hunter x Hunter: Nen x Survivor',
+    category: 'New Game',
+    genres: ['Survival', 'Roguelite'],
+    platforms: ['Android', 'IOS'],
+    trailerUrl: 'https://youtu.be/WXf5L9KnSTA?si=bfyCQgArBKdXGy9n'
+  },
+  {
+    id: 'poppy-ch5',
+    releaseDate: '2026-02-18',
+    displayDate: 'Feb 18th 2026',
+    title: 'Poppy Playtime: Chapter 5',
+    category: 'Update', // Representing a chapter release
+    genres: ['Horror', 'Puzzle'],
+    platforms: ['PC'],
+    trailerUrl: 'https://youtu.be/aaAUO5KJfQg?si=Sf-SyR_z9-lJRpvM'
+  },
+  {
+    id: 'star-trek-voyagers',
+    releaseDate: '2026-02-18',
+    displayDate: 'Feb 18th 2026',
+    title: 'Star Trek: Voyagers - Across The Unknown',
+    category: 'New Game',
+    genres: ['Survival', 'Strategy'],
+    platforms: ['PS5', 'Xbox', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/_2gpdykZJkA?si=BatKNU6ZOw_AHkZ8'
+  },
+  {
+    id: 'dead-antares',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Dead In Antares',
+    category: 'New Game',
+    genres: ['Turn-Based', 'Survival'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/6TQmnUg_qxI?si=Y4kkMeKIyE20S1uw'
+  },
+  {
+    id: 'death-howl-port',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Death Howl',
+    category: 'Port',
+    genres: ['Soulslike', 'Deckbuilder'],
+    platforms: ['PS5', 'Xbox', 'Switch'],
+    trailerUrl: 'https://youtu.be/6BzOOablitY?si=vk-RV2JQNvg7h9hw'
+  },
+  {
+    id: 'death-match-comedy',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Death Match Love Comedy!',
+    category: 'Remake/Remaster',
+    genres: ['Adventure', 'Visual Novel'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/7o1fCBI7dot?si=8vdb7nxinYR3RTIw'
+  },
+  {
+    id: 'demon-tides',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Demon Tides',
+    category: 'New Game',
+    genres: ['Platformer', 'Action-Adventure'],
+    platforms: ['PC (Steam)'],
+    trailerUrl: 'https://youtu.be/vjupci4-eFY?si=sGMoq7e8tQav6uOR'
+  },
+  {
+    id: 'gear-club-3',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Gear. Club Unlimited 3',
+    category: 'New Game',
+    genres: ['Racing', 'Simulator'],
+    platforms: ['Switch 2'],
+    trailerUrl: 'https://youtu.be/5GJV2WUc-wU?si=sOhNTyNIv1w4OerH'
+  },
+  {
+    id: 'kletka-full',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'KLETKA',
+    category: 'Full Release',
+    genres: ['Survival Horror'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/TtQvJsPWGsw?si=LTAPjs7nHwwBDtUd'
+  },
+  {
+    id: 'love-eternal-full',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'LOVE ETERNAL',
+    category: 'Full Release',
+    genres: ['Platformer', 'Psychological Horror'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/0nKpwQ_1koU?si=iZV47uMCA5ndjZdY'
+  },
+  {
+    id: 'showgunners-port',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Showgunners',
+    category: 'Port',
+    genres: ['Turn-Based Tactics'],
+    platforms: ['PS5', 'PS4', 'Xbox'],
+    trailerUrl: 'https://youtu.be/vJ9BDZa3kK4?si=x-o3VgriAyhowo4_'
+  },
+  {
+    id: 'soulslinger-port',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Soulslinger: Envoy of Death',
+    category: 'Port',
+    genres: ['FPS', 'Roguelite'],
+    platforms: ['PS5', 'Xbox'],
+    trailerUrl: 'https://youtu.be/_969XN3e5jA?si=s3qIrMTYUlmdEPfH'
+  },
+  {
+    id: 'styx-greed',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Styx: Blades Of Greed',
+    category: 'New Game',
+    genres: ['Stealth', 'Action-Adventure'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/tGHc_VIwoz4?si=4b2qeR1gZyB9rMKq'
+  },
+  {
+    id: 'styx-collection',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'Styx: Master of Stealth Collection',
+    category: 'Edition',
+    genres: ['Stealth'],
+    platforms: ['PS5', 'Xbox', 'PC']
+  },
+  {
+    id: 'wizmans-world',
+    releaseDate: '2026-02-19',
+    displayDate: 'Feb 19th 2026',
+    title: 'WiZmans World Re;Try',
+    category: 'Remake/Remaster',
+    genres: ['JRPG'],
+    platforms: ['PS5', 'PS4', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/dlnCMvjk2ww?si=t5iXVlzbx7Cd5X1o'
+  },
+  {
+    id: 'castle-heart-phys',
+    releaseDate: '2026-02-20',
+    displayDate: 'Feb 20th 2026',
+    title: 'Castle Of Heart: Retold',
+    category: 'Physical Release',
+    genres: ['Platformer'],
+    platforms: ['PS5', 'Switch'],
+    trailerUrl: 'https://youtu.be/dBzPv8WOXE4?si=ucuApMbFrwUpD4Co'
+  },
+  {
+    id: 'ys-x-nordics',
+    releaseDate: '2026-02-20',
+    displayDate: 'Feb 20th 2026',
+    title: 'Ys X: Proud Nordics',
+    category: 'Edition',
+    genres: ['ARPG'],
+    platforms: ['PS5', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/TjgJnBtV-j4?si=OQKgGQwknpPKfAxb'
+  },
+  {
+    id: 'city-hunter-remake',
+    releaseDate: '2026-02-26',
+    displayDate: 'Feb 26th 2026',
+    title: 'City Hunter',
+    category: 'Remake/Remaster',
+    genres: ['Shooter', 'Action'],
+    platforms: ['PS5', 'Xbox', 'Switch 2', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/acYcMaPX0n0?si=l56Wp8YKDrzWsN6w'
+  },
+  {
+    id: 'kaname-date-port',
+    releaseDate: '2026-02-26',
+    displayDate: 'Feb 26th 2026',
+    title: 'No Sleep For Kaname Date - From AI: The Somnium Files',
+    category: 'Port',
+    genres: ['Mystery', 'Visual Novel'],
+    platforms: ['PS5', 'PS4', 'Xbox'],
+    trailerUrl: 'https://youtu.be/LmC5eYNiUrI?si=7W97HaAUAvQjxFGN'
+  },
+  {
+    id: 'raiden-fighters-remix',
+    releaseDate: '2026-02-26',
+    displayDate: 'Feb 26th 2026',
+    title: 'Raiden Fighters Remix Collection',
+    category: 'Edition', // Representing a collection
+    genres: ['Shooter'],
+    platforms: ['PS5', 'PS4', 'Switch'],
+    trailerUrl: 'https://youtu.be/6nz_0bKgweQ?si=gkvzg2RXpwwDsPKR'
+  },
+  {
+    id: 'subway-city',
+    releaseDate: '2026-02-26',
+    displayDate: 'Feb 26th 2026',
+    title: 'Subway Surfers City',
+    category: 'New Game',
+    genres: ['Endless Runner'],
+    platforms: ['Android', 'IOS'],
+    trailerUrl: 'https://youtu.be/o-3sDXTaiEY?si=P_mdEzTFA9Dwrk5s'
+  },
+  {
+    id: 'tokyo-xtreme-port',
+    releaseDate: '2026-02-26',
+    displayDate: 'Feb 26th 2026',
+    title: 'Tokyo Xtreme Racer',
+    category: 'Port',
+    genres: ['Racer', 'RPG'],
+    platforms: ['PS5'],
+    trailerUrl: 'https://youtu.be/-G5rxglGiAg?si=-SBLivdcAKRWg_wP'
+  },
+  {
+    id: 'towerborne-full',
+    releaseDate: '2026-02-26',
+    displayDate: 'Feb 26th 2026',
+    title: 'Towerborne',
+    category: 'Full Release',
+    genres: ['ARPG', 'Co-Op'],
+    platforms: ['PS5', 'Xbox', 'PC'],
+    trailerUrl: 'https://youtu.be/4s1PI1YVCE4?si=JkgKfI1KjZ4kMxzZ'
+  },
+  {
+    id: 'laysara-full',
+    releaseDate: '2026-02-27',
+    displayDate: 'Feb 27th 2026',
+    title: 'Laysara: Summit Kingdom',
+    category: 'Full Release',
+    genres: ['City-Building', 'Simulation'],
+    platforms: ['PS5', 'PS4', 'Xbox', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/qLOaqS3XejI?si=O7qwOfmPsHCTltKb'
+  },
+  {
+    id: 'lil-gator-phys',
+    releaseDate: '2026-02-27',
+    displayDate: 'Feb 27th 2026',
+    title: 'Lil Gator Game: Gator of the Year Edition',
+    category: 'Physical Release',
+    genres: ['Adventure', 'Platformer'],
+    platforms: ['PS5', 'Switch'],
+    trailerUrl: 'https://youtu.be/VS2sVbBG-pA?si=zUM1A_9i0z1Kcsid'
+  },
+  {
+    id: 're-bio-port',
+    releaseDate: '2026-02-27',
+    displayDate: 'Feb 27th 2026',
+    title: 'Resident Evil Biohazard Gold Edition',
+    category: 'Port',
+    genres: ['Survival Horror'],
+    platforms: ['Switch 2'],
+    trailerUrl: 'https://youtu.be/6a8gK0YdUpY?si=GvcUPB4FK1E9cgAr'
+  },
+  {
+    id: 're-village-port',
+    releaseDate: '2026-02-27',
+    displayDate: 'Feb 27th 2026',
+    title: 'Resident Evil Village Gold Edition',
+    category: 'Port',
+    genres: ['Survival Horror', 'Action'],
+    platforms: ['Switch 2'],
+    trailerUrl: 'https://youtu.be/6a8gK0YdUpY?si=GvcUPB4FK1E9cgAr'
+  },
+  {
+    id: 're-requiem',
+    releaseDate: '2026-02-27',
+    displayDate: 'Feb 27th 2026',
+    title: 'Resident Evil Requiem',
+    category: 'New Game',
+    genres: ['Survival Horror', 'Action'],
+    platforms: ['PS5', 'Xbox', 'Switch 2', 'PC'],
+    trailerUrl: 'https://youtu.be/0wFNN1f6hF8?si=4Xwi4xWUXpzLgS_j'
+  },
+  {
+    id: 're-gen-pack',
+    releaseDate: '2026-02-27',
+    displayDate: 'Feb 27th 2026',
+    title: 'Resident Evil Generation Pack',
+    category: 'Edition', // Collection
+    genres: ['Horror'],
+    platforms: ['Switch 2'],
+    trailerUrl: 'https://youtu.be/cWk4GoHLvTo?si=HFv2DsBhdMLf-uV_'
+  },
+  {
+    id: 'berseria-remaster',
+    releaseDate: '2026-02-27',
+    displayDate: 'Feb 27th 2026',
+    title: 'Tales of Berseria Remastered',
+    category: 'Remake/Remaster',
+    genres: ['ARPG', 'JRPG'],
+    platforms: ['PS5', 'Xbox', 'Switch', 'PC'],
+    trailerUrl: 'https://youtu.be/LrgChQAkLCA?si=GENrIK61S9Aiozso'
   }
 ];
