@@ -268,22 +268,57 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Helper to check if a game matches the current month and search text
+  const baseFilter = (game: Game) => {
+    const monthIndex = parseInt(game.releaseDate.split('-')[1], 10) - 1;
+    if (monthIndex !== activeMonth) return false;
+    
+    const matchesSearch = 
+      game.title.toLowerCase().includes(search.toLowerCase()) ||
+      game.genres.some(g => g.toLowerCase().includes(search.toLowerCase())) ||
+      game.platforms.some(p => p.toLowerCase().includes(search.toLowerCase()));
+      
+    return matchesSearch;
+  };
+
+  const categoryCounts = useMemo(() => {
+    const counts: Record<string, number> = { All: 0 };
+    GAMES_DATA.filter(baseFilter).forEach(game => {
+      counts.All++;
+      counts[game.category] = (counts[game.category] || 0) + 1;
+    });
+    return counts;
+  }, [activeMonth, search]);
+
+  const platformCounts = useMemo(() => {
+    const counts: Record<string, number> = { All: 0, Mobile: 0 };
+    GAMES_DATA.filter(baseFilter).forEach(game => {
+      counts.All++;
+      game.platforms.forEach(p => {
+        majorPlatforms.forEach(mp => {
+          if (mp === 'All' || mp === 'Mobile') return;
+          if (p.toLowerCase().includes(mp.toLowerCase())) {
+            counts[mp] = (counts[mp] || 0) + 1;
+          }
+        });
+        if (p.includes('Android') || p.includes('IOS')) {
+          counts.Mobile++;
+        }
+      });
+    });
+    return counts;
+  }, [activeMonth, search]);
+
   const filteredGames = useMemo(() => {
     return GAMES_DATA.filter(game => {
-      const monthIndex = parseInt(game.releaseDate.split('-')[1], 10) - 1;
-      if (monthIndex !== activeMonth) return false;
-
-      const matchesSearch = 
-        game.title.toLowerCase().includes(search.toLowerCase()) ||
-        game.genres.some(g => g.toLowerCase().includes(search.toLowerCase())) ||
-        game.platforms.some(p => p.toLowerCase().includes(search.toLowerCase()));
+      if (!baseFilter(game)) return false;
       
       const matchesCategory = activeCategory === 'All' || game.category === activeCategory;
       const matchesPlatform = activePlatform === 'All' || 
         game.platforms.some(p => p.toLowerCase().includes(activePlatform.toLowerCase())) ||
         (activePlatform === 'Mobile' && (game.platforms.some(p => p.includes('Android') || p.includes('IOS'))));
       
-      return matchesSearch && matchesCategory && matchesPlatform;
+      return matchesCategory && matchesPlatform;
     });
   }, [search, activeCategory, activePlatform, activeMonth]);
 
@@ -402,9 +437,12 @@ export default function App() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight ${activeCategory === cat ? (isDark ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-900 border-slate-900 text-white') : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')}`}
+                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight group/btn-cat flex items-center gap-1.5 ${activeCategory === cat ? (isDark ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-900 border-slate-900 text-white') : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')}`}
                   >
-                    {cat}
+                    <span>{cat}</span>
+                    <span className={`text-[7px] font-black opacity-50 ${activeCategory === cat ? 'text-white' : ''}`}>
+                      ({categoryCounts[cat] || 0})
+                    </span>
                   </button>
                 ))}
               </div>
@@ -417,9 +455,12 @@ export default function App() {
                   <button
                     key={plat}
                     onClick={() => setActivePlatform(plat)}
-                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight ${activePlatform === plat ? (isDark ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-indigo-600 border-indigo-500 text-white') : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')}`}
+                    className={`px-2.5 py-1 rounded-md text-[8px] font-black border transition-all uppercase tracking-tight flex items-center gap-1.5 ${activePlatform === plat ? (isDark ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-indigo-600 border-indigo-500 text-white') : (isDark ? 'bg-slate-950 border-slate-800 text-slate-500 hover:text-slate-200' : 'bg-slate-50 border-slate-200 text-slate-500 hover:text-slate-900')}`}
                   >
-                    {plat}
+                    <span>{plat}</span>
+                    <span className={`text-[7px] font-black opacity-50 ${activePlatform === plat ? 'text-white' : ''}`}>
+                      ({platformCounts[plat] || 0})
+                    </span>
                   </button>
                 ))}
               </div>
