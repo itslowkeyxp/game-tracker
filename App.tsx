@@ -3,7 +3,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { 
   Search, Calendar, List, Gamepad2, Play, Filter, Image as ImageIcon, Sparkles, 
   ChevronRight, Globe, Layers, Cpu, Monitor, Smartphone, LayoutGrid, X, Twitter, 
-  Sun, Moon, RefreshCw, PlusSquare, ExternalLink, Clock, CheckCircle, Package, Info
+  Sun, Moon, RefreshCw, PlusSquare, ExternalLink, Clock, CheckCircle, Package, Info,
+  Github
 } from 'lucide-react';
 import { GAMES_DATA } from './data.ts';
 import { Game, ViewMode, ReleaseCategory } from './types.ts';
@@ -448,7 +449,17 @@ export default function App() {
 
       <footer className={`mt-20 border-t transition-all py-8 ${isDark ? 'border-slate-900 bg-slate-950/40' : 'border-slate-200 bg-white'}`}>
         <div className="max-w-[1700px] mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className={`text-[8px] font-black uppercase tracking-[0.2em] ${isDark ? 'text-slate-700' : 'text-slate-300'}`}>itslowkeyxp</span>
+          <div className="flex items-center gap-4">
+            <span className={`text-[8px] font-black uppercase tracking-[0.2em] ${isDark ? 'text-slate-700' : 'text-slate-300'}`}>itslowkeyxp</span>
+            <a 
+              href="https://github.com/itslowkeyxp/game-tracker" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`flex items-center gap-1.5 text-[8px] font-black uppercase tracking-widest transition-colors ${isDark ? 'text-slate-500 hover:text-white' : 'text-slate-400 hover:text-slate-900'}`}
+            >
+              <Github className="w-3 h-3" /> GitHub
+            </a>
+          </div>
           <span className={`text-[8px] font-black uppercase tracking-[0.3em] ${isDark ? 'text-slate-800' : 'text-slate-300'}`}>
             © 2026 Game Tracker
           </span>
