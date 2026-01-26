@@ -2,6 +2,8 @@
 # 🎮 Jan, Feb, Mar, Apr & May 2026 Game Tracker
 
 A high-performance, modern dashboard for tracking video game releases, updates, ports, and DLCs for the first five months of 2026. Built with React, Tailwind CSS, and Lucide Icons, featuring a sleek dual-mode (Dark/Light) interface.
+<img width="1700" height="938" alt="image" src="https://github.com/user-attachments/assets/7fb3e90f-119d-4606-8e61-030276b4989d" />
+
 
 ## 🚀 Key Features
 
